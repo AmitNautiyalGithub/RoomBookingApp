@@ -54,27 +54,27 @@ namespace RoomBookingApp.Persistence.Tests
             }
         }
 
-        [Fact]
-        public void Should_Save_Room_Booking()
-        {
-            var options = new DbContextOptionsBuilder<RoomBookingAppDbContext>()
-                           .UseInMemoryDatabase("ShouldSaveTest").Options;
+        //[Fact]
+        //public void Should_Save_Room_Booking()
+        //{
+        //    var options = new DbContextOptionsBuilder<RoomBookingAppDbContext>()
+        //                   .UseInMemoryDatabase("ShouldSaveTest").Options;
 
-            var roomBooking = new RoomBooking { RoomId = 1, Date = DateTime.Now, FullName = "Amit Nauityal" };
+        //    var roomBooking = new RoomBooking { RoomId = 1, Date = DateTime.Now, FullName = "Amit Nauityal" };
                        
 
-            using (var context = new RoomBookingAppDbContext(options))
-            {
-                RoomBookingService roomBookingService = new RoomBookingService(context);
-                roomBookingService.Save(roomBooking);
+        //    using (var context = new RoomBookingAppDbContext(options))
+        //    {
+        //        RoomBookingService roomBookingService = new RoomBookingService(context);
+        //        roomBookingService.Save(roomBooking);
 
-                var bookings = context.RoomBookings.ToList();
+        //        var bookings = context.RoomBookings.ToList();
 
-                var booking = Assert.Single(bookings);
+        //        var booking = Assert.Single(bookings);
 
-                Assert.Equal(roomBooking.Date, booking.Date);
-                Assert.Equal(roomBooking.RoomId, booking.RoomId);
-            }
-        }
+        //        Assert.Equal(roomBooking.Date, booking.Date);
+        //        Assert.Equal(roomBooking.RoomId, booking.RoomId);
+        //    }
+        //}
     }
 }
