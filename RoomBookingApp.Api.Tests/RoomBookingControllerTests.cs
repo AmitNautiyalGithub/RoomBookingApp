@@ -40,7 +40,7 @@ namespace RoomBookingApp.Api.Tests
             BookingResultFlag bookingResultFlag)
         {
 
-             //Arrange
+            //Arrange
             if (!isModelValid)
             {
                 _roomBookingController.ModelState.AddModelError("test", "ErrorMessage");
